@@ -39,9 +39,9 @@ namespace pryTP3LaboratorioProgramacionIII
                 {
                     dgvConsulta.Rows.Add(dr.ItemArray[1].ToString());
                 }
-                dgvConsulta.AllowUserToAddRows = false;
-                dgvConsulta.AllowUserToResizeColumns = false;
-                dgvConsulta.AllowUserToResizeRows = false;
+                //dgvConsulta.AllowUserToAddRows = false;
+                //dgvConsulta.AllowUserToResizeColumns = false;
+                //dgvConsulta.AllowUserToResizeRows = false;
                 foreach (DataRow dr in tablaEncuestas.Rows)
                 {
                     foreach (DataGridViewTextBoxColumn dcGrilla in dgvConsulta.Columns)
@@ -64,12 +64,12 @@ namespace pryTP3LaboratorioProgramacionIII
                 {
                     column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
-                dgvConsulta.AutoResizeColumns();
-                dgvConsulta.AutoResizeRows();
+                //dgvConsulta.AutoResizeColumns();
+                //dgvConsulta.AutoResizeRows();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Problemas con la base de datos");
+                MessageBox.Show("Problemas con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
