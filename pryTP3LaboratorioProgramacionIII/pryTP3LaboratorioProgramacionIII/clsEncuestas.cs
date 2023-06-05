@@ -15,8 +15,7 @@ namespace pryTP3LaboratorioProgramacionIII
         private DataTable tabla;
         public clsEncuestas()
         {
-            string cadena = "provider=microsoft.jet.oledb.4.0;data source=TP.mdb";
-            conector = new OleDbConnection(cadena);
+            conector = new OleDbConnection(Properties.Settings.Default.Cadena);
             comando = new OleDbCommand();
 
             comando.Connection = conector;
@@ -26,11 +25,6 @@ namespace pryTP3LaboratorioProgramacionIII
             adaptador = new OleDbDataAdapter(comando);
             tabla = new DataTable();
             adaptador.Fill(tabla);
-
-            DataColumn[] dc = new DataColumn[2];
-            dc[0] = tabla.Columns["localidad"];
-            dc[1] = tabla.Columns["profesion"];
-            tabla.PrimaryKey = dc;
         }
         public DataTable getAll()
         { 

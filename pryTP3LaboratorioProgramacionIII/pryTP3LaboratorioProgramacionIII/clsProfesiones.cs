@@ -26,8 +26,7 @@ namespace pryTP3LaboratorioProgramacionIII
 
         public clsProfesiones()
         {
-            string cadena = "provider=microsoft.jet.oledb.4.0;data source=TP.mdb";
-            conector = new OleDbConnection(cadena);
+            conector = new OleDbConnection(Properties.Settings.Default.Cadena);
             comando = new OleDbCommand();
 
             comando.Connection = conector;
